@@ -1,0 +1,651 @@
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f7fb;
+    color: #222;
+}
+
+
+/* ================= NAVBAR ================= */
+
+header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+.navbar {
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+.auth-buttons button {
+    padding: 10px 18px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    border: 1px solid #2563eb;
+
+    background: white;
+
+    color: #2563eb;
+
+    margin-left: 5px;
+}
+
+.auth-buttons button:last-child {
+    background: #2563eb;
+    color: white;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 500px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background:
+    linear-gradient(
+        rgba(37,99,235,0.92),
+        rgba(30,64,175,0.92)
+    );
+
+    color: white;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #ffd43b;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-box {
+    background: white;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    gap: 10px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.2);
+}
+
+.search-box input {
+    flex: 1;
+
+    padding: 16px;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+.search-box button {
+    padding: 0 25px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background: #1d4ed8;
+}
+
+#searchResult {
+    margin-top: 20px;
+}
+
+
+/* ================= SECTIONS ================= */
+
+.jobs-section,
+.companies-section,
+.contact-section {
+    padding: 70px 7%;
+
+    text-align: center;
+}
+
+.jobs-section h2,
+.companies-section h2,
+.contact-section h2 {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #777;
+
+    margin-bottom: 40px;
+}
+
+
+/* ================= JOB CARDS ================= */
+
+.job-container {
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(230px, 1fr));
+
+    gap: 25px;
+}
+
+.job-card {
+    background: white;
+
+    padding: 30px 22px;
+
+    border-radius: 12px;
+
+    text-align: left;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.job-card:hover {
+    transform: translateY(-8px);
+}
+
+.job-icon {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.job-card h3 {
+    color: #2563eb;
+
+    margin-bottom: 8px;
+}
+
+.job-card p {
+    color: #666;
+
+    margin: 8px 0;
+}
+
+.job-card .company {
+    color: #222;
+
+    font-weight: bold;
+}
+
+.job-card button {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #2563eb;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* ================= COMPANIES ================= */
+
+.companies-section {
+    background: white;
+}
+
+.company-container {
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 25px;
+}
+
+.company-card {
+    padding: 30px;
+
+    border: 1px solid #eee;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.company-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,0.1);
+}
+
+.company-logo {
+    width: 60px;
+    height: 60px;
+
+    margin: auto;
+
+    margin-bottom: 15px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #2563eb;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+
+    font-weight: bold;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact-section form {
+    max-width: 600px;
+
+    margin: 30px auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.contact-section input,
+.contact-section textarea {
+    padding: 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+.contact-section textarea {
+    height: 130px;
+
+    resize: none;
+}
+
+.contact-section button {
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* ================= MODAL ================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.6);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2000;
+}
+
+.modal-content {
+    width: 90%;
+
+    max-width: 400px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 10px;
+
+    position: relative;
+}
+
+.modal-content h2 {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.modal-content input {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 6px;
+}
+
+.modal-content button {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #2563eb;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.close {
+    position: absolute;
+
+    right: 20px;
+
+    top: 10px;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #111827;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+footer h2 span {
+    color: #2563eb;
+}
+
+footer p {
+    color: #bbb;
+
+    margin-top: 8px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+
+        padding: 20px;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box button {
+        padding: 14px;
+    }
+
+}
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.search-box input {
+    width: 300px;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #2563eb;
+}
+
+.search-box button {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 7px;
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background: #1d4ed8;
+}
+/* =========================
+   LOGIN / REGISTER PAGE
+   ========================= */
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #eef2ff, #dbeafe);
+    padding: 20px;
+}
+
+.auth-box {
+    width: 100%;
+    max-width: 430px;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+.auth-box h2 {
+    margin-bottom: 10px;
+    color: #1e3a8a;
+    font-size: 28px;
+}
+
+.auth-box p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.auth-box form {
+    width: 100%;
+}
+
+.auth-box input,
+.auth-box select {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.auth-box input:focus,
+.auth-box select:focus {
+    border-color: #2563eb;
+}
+
+.auth-box button {
+    width: 100%;
+    padding: 13px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.auth-box button:hover {
+    background: #1d4ed8;
+}
+
+.auth-box a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-box a:hover {
+    text-decoration: underline;
+}
+
+.message {
+    background: #eff6ff;
+    color: #1d4ed8;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+}

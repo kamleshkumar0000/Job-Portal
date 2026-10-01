@@ -1,0 +1,9 @@
+{
+    "intelephense.stubs": [
+        "Core",
+        "standard",
+        "session",
+        "superglobals",
+        "mongodb"
+    ]
+}

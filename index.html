@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JobFinder - Online Job Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                <span>Job</span>Finder
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs/jobs.php">Jobs</a></li>
+                <li><a href="jobs/jobs.php">Companies</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
+            
+            </ul>
+
+            <div class="auth-buttons">
+                <a href="login.php" class="auth-btn">Login</a>
+                <a href="register.php" class="auth-btn">Register</a>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- Home Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Find Your
+                <span>Dream Job</span>
+            </h1>
+
+            <p>
+                Search thousands of jobs and find the right
+                career opportunity for you.
+            </p>
+
+
+            <!-- Job Search -->
+            <form action="jobs/search_jobs.php" method="GET" class="search-form">
+
+                <input
+                    type="text"
+                    name="search"
+                    placeholder="Search jobs, skills, or companies..."
+                    required
+                >
+
+                <button type="submit">Search Jobs</button>
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- Jobs Section -->
+    <section class="jobs-section" id="jobs">
+
+        <h2>Popular Jobs</h2>
+
+        <p class="subtitle">
+            Explore the latest job opportunities
+        </p>
+
+
+        <div class="job-container">
+
+            <!-- Job 1 -->
+            <div class="job-card">
+
+                <div class="job-icon"></div>
+
+                <h3>Web Developer</h3>
+
+                <p class="company">
+                    Tech Solutions
+                </p>
+
+                <p> Mumbai</p>
+
+                <p> ₹4 - ₹7 LPA</p>
+
+                <a href="jobs/jobs.php" class="apply-btn">
+                    View jobs & Apply
+                </a> 
+
+            </div>
+
+
+            <!-- Job 2 -->
+            <div class="job-card">
+
+                <div class="job-icon"></div>
+
+                <h3>Data Analyst</h3>
+
+                <p class="company">
+                    DataTech Pvt. Ltd.
+                </p>
+
+                <p> Pune</p>
+
+                <p> ₹5 - ₹8 LPA</p>
+
+                <a href="jobs/jobs.php" class="apply-btn">
+                    View jobs & Apply
+                </a>
+
+            </div>
+
+
+            <!-- Job 3 -->
+            <div class="job-card">
+
+                <div class="job-icon"></div>
+
+                <h3>UI/UX Designer</h3>
+
+                <p class="company">
+                    Creative Studio
+                </p>
+
+                <p> Bangalore</p>
+
+                <p> ₹4 - ₹6 LPA</p>
+
+                <a href="jobs/jobs.php" class="apply-btn">
+                    View jobs & Apply
+                </a>
+
+            </div>
+
+
+            <!-- Job 4 -->
+            <div class="job-card">
+
+                <div class="job-icon"></div>
+
+                <h3>App Developer</h3>
+
+                <p class="company">
+                    Digital World
+                </p>
+
+                <p> Delhi</p>
+
+                <p> ₹5 - ₹8 LPA</p>
+
+                <a href="jobs/jobs.php" class="apply-btn">
+                    View jobs & Apply
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Companies Section -->
+    <section class="companies-section" id="companies">
+
+        <h2>Top Companies</h2>
+
+        <p class="subtitle">
+            Find opportunities from leading companies
+        </p>
+
+
+        <div class="company-container">
+
+            <div class="company-card">
+                <div class="company-logo">T</div>
+                <h3>TechCorp</h3>
+                <p>120+ Jobs</p>
+            </div>
+
+            <div class="company-card">
+                <div class="company-logo">D</div>
+                <h3>DataTech</h3>
+                <p>80+ Jobs</p>
+            </div>
+
+            <div class="company-card">
+                <div class="company-logo">C</div>
+                <h3>Creative Studio</h3>
+                <p>60+ Jobs</p>
+            </div>
+
+            <div class="company-card">
+                <div class="company-logo">D</div>
+                <h3>Digital World</h3>
+                <p>100+ Jobs</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>
+            Have any questions? Send us a message.
+        </p>
+
+
+        <form action="contact.php" method="POST">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <input
+                type="text"
+                id="subject"
+                placeholder="Subject"
+                required
+            >
+            
+            <textarea
+                id="message"
+                placeholder="Your Message"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+
+        <div class="modal-content">
+
+            <span
+                class="close"
+                onclick="closeLogin()">
+                &times;
+            </span>
+
+            <h2>Login</h2>
+
+            <input
+                type="email"
+                placeholder="Email Address"
+            >
+
+            <input
+                type="password"
+                placeholder="Password"
+            >
+
+            <button onclick="loginUser()">
+                Login
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+
+        <div class="modal-content">
+
+            <span
+                class="close"
+                onclick="closeRegister()">
+                &times;
+            </span>
+
+            <h2>Create Account</h2>
+
+            <input
+                type="text"
+                placeholder="Full Name"
+            >
+
+            <input
+                type="email"
+                placeholder="Email Address"
+            >
+
+            <input
+                type="password"
+                placeholder="Create Password"
+            >
+
+            <button onclick="registerUser()">
+                Register
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <h2>
+            <span>Job</span>Finder
+        </h2>
+
+        <p>
+            Your trusted online job portal.
+        </p>
+
+        <p>
+            © 2026 JobFinder. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
