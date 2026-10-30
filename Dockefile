@@ -1,0 +1,43 @@
+FROM php:8.2-apache
+
+# Install required packages
+RUN apt-get update && apt-get install -y \
+    git \
+    unzip \
+    pkg-config \
+    libssl-dev \
+    libcurl4-openssl-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install MongoDB PHP extension
+RUN pecl install mongodb \
+    && docker-php-ext-enable mongodb
+
+# Install Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+# Project directory
+WORKDIR /var/www/html
+
+# Copy Composer files first
+COPY composer.json composer.lock* ./
+
+# Install PHP dependencies
+RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+
+# Copy project files
+COPY . .
+
+# Enable Apache rewrite
+RUN a2enmod rewrite
+
+# Set permissions
+RUN chown -R www-data:www-data /var/www/html
+
+# Render uses PORT environment variable
+EXPOSE 10000
+
+# Start Apache on Render PORT
+CMD sed -i "s/Listen 80/Listen ${PORT}/" /etc/apache2/ports.conf && \
+    sed -i "s/<VirtualHost \*:80>/<VirtualHost *:${PORT}>/" /etc/apache2/sites-available/000-default.conf && \
+    apache2-foreground
